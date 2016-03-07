@@ -2,7 +2,6 @@ package stat
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -328,7 +327,6 @@ type (
 func GetUserStats(userName, userID string, device BF4Device) (*StatResponse, error) {
 	paths := []string{Domain, "bf4", "soldier", userName, "stats", userID, string(device)}
 	url := strings.Join(paths, "/")
-	fmt.Println(url)
 
 	cli := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
