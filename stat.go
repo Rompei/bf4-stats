@@ -128,9 +128,9 @@ type (
 
 	// OnlineGame is object of BF4 API.
 	OnlineGame struct {
-		Platform  int `json:"platform"`
-		Game      int `json:"game"`
-		PersonaID int `json:"personaId"`
+		Platform  int    `json:"platform"`
+		Game      int    `json:"game"`
+		PersonaID string `json:"personaId"`
 	}
 
 	// PlayingMp is object of BF4 API.
