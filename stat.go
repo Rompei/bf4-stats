@@ -69,20 +69,20 @@ type (
 
 	// Session is object of BF4 API.
 	Session struct {
-		HasAdminAccess     bool             `json:"hasAdminAccess"`
-		OriginLaunch       int              `json:"originLaunch"`
-		UserProducts       []string         `json:"userProducts"`
-		NpxExploration     NpxExploration   `json:"npxExploration"`
-		Locale             Locale           `json:"locale"`
-		IntroSectionBits   int              `json:"introSectionBits"`
-		UserID             string           `json:"userId"`
-		PostChecksum       string           `json:"postChecksum"`
-		Facebook           Facebook         `json:"facebook"`
-		User               User             `json:"user"`
-		IsLoggedIn         bool             `json:"isLoggedIn"`
-		Rollouts           []string         `json:"rollouts"`
-		UserGameExpansions map[string][]int `json:"userGameExpansions"`
-		UserGames          interface{}      `json:"userGames"`
+		HasAdminAccess     bool               `json:"hasAdminAccess"`
+		OriginLaunch       int                `json:"originLaunch"`
+		UserProducts       []string           `json:"userProducts"`
+		NpxExploration     NpxExploration     `json:"npxExploration"`
+		Locale             Locale             `json:"locale"`
+		IntroSectionBits   int                `json:"introSectionBits"`
+		UserID             string             `json:"userId"`
+		PostChecksum       string             `json:"postChecksum"`
+		Facebook           Facebook           `json:"facebook"`
+		User               User               `json:"user"`
+		IsLoggedIn         bool               `json:"isLoggedIn"`
+		Rollouts           []string           `json:"rollouts"`
+		UserGameExpansions map[string][]int64 `json:"userGameExpansions"`
+		UserGames          interface{}        `json:"userGames"`
 	}
 
 	// NpxExploration is object of BF4 API.
@@ -135,17 +135,17 @@ type (
 
 	// PlayingMp is object of BF4 API.
 	PlayingMp struct {
-		GameID         string `json:"gameId"`
-		GameExpansions []int  `json:"gameExpansions"`
-		GameMode       string `json:"gameMode"`
-		ServerGuID     string `json:"serverGuid"`
-		Game           int    `json:"game"`
-		LevelName      string `json:"levelName"`
-		PersonaID      string `json:"personaId"`
-		ServerName     string `json:"serverName"`
-		Experience     int    `json:"experience"`
-		Platform       int    `json:"platform"`
-		Role           int    `json:"role"`
+		GameID         string  `json:"gameId"`
+		GameExpansions []int64 `json:"gameExpansions"`
+		GameMode       string  `json:"gameMode"`
+		ServerGuID     string  `json:"serverGuid"`
+		Game           int     `json:"game"`
+		LevelName      string  `json:"levelName"`
+		PersonaID      string  `json:"personaId"`
+		ServerName     string  `json:"serverName"`
+		Experience     int     `json:"experience"`
+		Platform       int     `json:"platform"`
+		Role           int     `json:"role"`
 	}
 
 	// Realm is object of BF4 API.
@@ -174,7 +174,7 @@ type (
 	// Context is object of BF4 API.
 	Context struct {
 		Href                        string                       `json:"_href"`
-		UserGameExpansions          map[string][]int             `json:"userGameExpansions"`
+		UserGameExpansions          map[string][]int64           `json:"userGameExpansions"`
 		UnreadGameReports           int                          `json:"unreadGameReports"`
 		PersonaID                   int64                        `json:"personaId"`
 		PersonaName                 string                       `json:"personaName"`
@@ -183,7 +183,7 @@ type (
 		StatsPersona                StatsPersona                 `json:"statsPersona"`
 		PersonaPicture              string                       `json:"personaPicture"`
 		CookieConsentEnebled        bool                         `json:"cookieConsentEnebled"`
-		UserGames                   map[string][]int             `json:"userGames"`
+		UserGames                   map[string][]int64           `json:"userGames"`
 		SociadSharingEnebled        bool                         `json:"socialSharingEnabled"`
 		ProfileCommon               ProfileCommon                `json:"profileCommon"`
 		UserMessageBox              interface{}                  `json:"userMessageBox"`
@@ -318,7 +318,7 @@ type (
 		Age                        interface{} `json:"age"`
 		Birthdate                  interface{} `json:"birthdate"`
 		FeedActive                 bool        `json:"feedActive"`
-		LastLogin                  int         `json:"lastLogin"`
+		LastLogin                  int64       `json:"lastLogin"`
 		PrivacyDetails             int         `json:"privacyDetails"`
 	}
 )
