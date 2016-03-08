@@ -69,20 +69,20 @@ type (
 
 	// Session is object of BF4 API.
 	Session struct {
-		HasAdminAccess     bool           `json:"hasAdminAccess"`
-		OriginLaunch       int            `json:"originLaunch"`
-		UserProducts       []string       `json:"userProducts"`
-		NpxExploration     NpxExploration `json:"npxExploration"`
-		Locale             Locale         `json:"locale"`
-		IntroSectionBits   int            `json:"introSectionBits"`
-		UserID             string         `json:"userId"`
-		PostChecksum       string         `json:"postChecksum"`
-		Facebook           Facebook       `json:"facebook"`
-		User               User           `json:"user"`
-		IsLoggedIn         bool           `json:"isLoggedIn"`
-		Rollouts           []string       `json:"rollouts"`
-		UserGameExpansions interface{}    `json:"userGameExpansions"`
-		UserGames          interface{}    `json:"userGames"`
+		HasAdminAccess     bool             `json:"hasAdminAccess"`
+		OriginLaunch       int              `json:"originLaunch"`
+		UserProducts       []string         `json:"userProducts"`
+		NpxExploration     NpxExploration   `json:"npxExploration"`
+		Locale             Locale           `json:"locale"`
+		IntroSectionBits   int              `json:"introSectionBits"`
+		UserID             string           `json:"userId"`
+		PostChecksum       string           `json:"postChecksum"`
+		Facebook           Facebook         `json:"facebook"`
+		User               User             `json:"user"`
+		IsLoggedIn         bool             `json:"isLoggedIn"`
+		Rollouts           []string         `json:"rollouts"`
+		UserGameExpansions map[string][]int `json:"userGameExpansions"`
+		UserGames          interface{}      `json:"userGames"`
 	}
 
 	// NpxExploration is object of BF4 API.
@@ -174,7 +174,7 @@ type (
 	// Context is object of BF4 API.
 	Context struct {
 		Href                        string                       `json:"_href"`
-		UserGameExpansions          interface{}                  `json:"userGameExpansions"`
+		UserGameExpansions          map[string][]int             `json:"userGameExpansions"`
 		UnreadGameReports           int                          `json:"unreadGameReports"`
 		PersonaID                   int64                        `json:"personaId"`
 		PersonaName                 string                       `json:"personaName"`
